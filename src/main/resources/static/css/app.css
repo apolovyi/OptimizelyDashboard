@@ -1,0 +1,132 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700,400italic,700italic,300italic);
+@import 'https://cdnjs.cloudflare.com/ajax/libs/featherlight/1.4.0/featherlight.min.css';
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0 2% 0 2%;
+}
+
+p, a, span, h1, h2, h3, h4 {
+    font-family: 'Roboto Condensed', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+p, a, span {
+    font-weight: 300;
+    font-size: 12px;
+}
+
+a {
+    color: #005e34;
+    text-decoration: underline;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2em;
+    color: #005e34;
+    margin: 5px 0 10px 0;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #005e34;
+    margin: 0 0 7px 0;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 18px;
+    margin: 0 0 5px 0;
+}
+
+h4 {
+    font-weight: 700;
+    font-size: 14px;
+    margin: 0 20px 5px;
+    border-radius: 10px;
+    padding: 2px;
+}
+
+#runningColumn {
+    max-width: 650px;
+    margin: auto;
+}
+
+#pausedColumn {
+    width: 33%;
+    float: left;
+    border-right: 1px solid #c0c0c0;
+}
+
+#closedColumn {
+    width: 33%;
+    float: left;
+    border-right: 1px solid #c0c0c0;
+}
+
+.colHeading {
+    text-align: center;
+    padding: 20px 0 10px;
+}
+
+.testContainer {
+    border-top: 1px solid #c0c0c0;
+    padding: 10px 5px;
+}
+
+.testTitle {
+    color: #005e34;
+    text-decoration: underline;
+    margin-bottom: 12px;
+}
+
+.positive {
+    background-color: #00cc70;
+}
+
+.negative {
+    background-color: #ff8080;
+}
+
+.right {
+    float: right;
+}
+
+.left {
+    float: left;
+}
+
+.clear {
+    clear: both;
+}
+
+.var {
+    float: left;
+    text-align: center;
+}
+
+.controlTitle {
+    color: #fb8900;
+}
+
+.variantTitle {
+    color: #3892e4;
+}
+
+.previewImage {
+    width: 95%;
+    height: auto;
+}
+
+.small-percent {
+    font-size: 12px;
+    padding-left: 8px;
+}

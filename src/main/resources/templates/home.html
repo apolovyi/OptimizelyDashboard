@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Optimizely Dashboard</title>
+    <link rel="stylesheet" href="/css/app.css"/>
+</head>
+<body>
+<div id="runningColumn">
+    <h2 class="colHeading">Laufende A/B-Tests</h2>
+
+    <!--/*@thymesVar id="experiment" type="com.dashboard.domain.Experiment"*/-->
+    <div class="testContainer" th:if="${not #lists.isEmpty(experiments)}" th:each="experiment : ${experiments}">
+
+        <a th:href="@{${experiment.resultLink}}" target="_blank"><h3
+                class="testTitle left" th:text="${experiment.name}">Name</h3></a>
+        <div class="clear"></div>
+
+        <div class="var" th:each="var : ${experiment.variations}"
+             th:style="${'width:' + 100/#lists.size(experiment.variations) + '%'}">
+
+            <div th:if="${#strings.contains(var.name,'Original')}">
+                <h3 class="controlTitle" th:text="${var.name}">Name</h3>
+                <h4 th:text="${'CR: ' + var.cr+ ' %'}">CR</h4>
+                <h4 th:text="${'BS: ' + var.bs+ ' €'}">BS</h4>
+            </div>
+
+            <div th:unless="${#strings.contains(var.name,'Original')}">
+                <h3 class="variantTitle" th:text="${var.name}">Name</h3>
+                <h4 th:class="${var.crClass}" th:inline="text">CR: [[${var.cr}]]%<span class="small-percent"
+                                                                                       th:text="${var.crImprovement + '%'}">Imp%</span>
+                </h4>
+                <h4 th:class="${var.bsClass}" th:inline="text">BS: [[${var.cr}]]€<span class="small-percent"
+                                                                                       th:text="${var.bsImprovement + '%'}">Imp%</span>
+                </h4>
+            </div>
+        </div>
+
+        <div class="clear"></div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

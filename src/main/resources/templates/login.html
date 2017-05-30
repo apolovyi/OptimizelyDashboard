@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Optimizely Dashboard</title>
+    <link rel="stylesheet" href="/css/login.css"/>
+</head>
+<body>
+
+<div class="login-page">
+    <div class="form">
+        <div style="padding-bottom: 20px; color:crimson" th:if="${param.error}">
+            Benutzername oder Passwort ist ungültig.
+        </div>
+
+        <form class="login-form" th:action="@{/login}" method="post">
+            <input type="text" name="username" placeholder="username"/>
+            <input type="password" name="password" placeholder="password"/>
+            <button type="submit">login</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
